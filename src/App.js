@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const users = [
+    { name: "Anowar", age: 23 },
+    { name: "Rohan", age: 16 },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {users.map((e) => {
+        return (
+          //we can also create another function and call here like...Userdata(e)
+          // also <Userdata  name={e.name} age={e.age}/>
+          <div>
+            <h1>Hello {e.name}</h1>
+            <p>Your age : {e.age}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
 export default App;
+
+// this is called components
+// function Userdata(e) {
+//   return (
+//     <div>
+//       <h1>Hello {e.name}</h1>
+//       <p>Your age : {e.age}</p>
+//     </div>
+//   );
+// }
